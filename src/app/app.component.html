@@ -1,1 +1,42 @@
-<router-outlet></router-outlet>
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="side" #sidenav class="sidenav">
+    <mat-nav-list role="list" fxLayout="column">
+      <mat-list-item role="listitem" routerLink="contactus"
+        >Contact us</mat-list-item
+      >
+      <mat-list-item role="listitem" routerLink="addPateints"
+        >Add patients</mat-list-item
+      >
+      <mat-list-item role="listitem" routerLink="loadPateints"
+        >Load patients</mat-list-item
+      >
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <p>
+      <mat-toolbar color="primary">
+        <button
+          (click)="sidenav.toggle()"
+          mat-icon-button
+          class="example-icon"
+          aria-label="Example icon-button with menu icon"
+        >
+          <mat-icon>menu</mat-icon>
+        </button>
+
+        <mat-nav-list role="list" fxLayout="row">
+          <mat-list-item role="listitem" routerLink="contactus"
+            >Contact us</mat-list-item
+          >
+          <mat-list-item role="listitem" routerLink="addPateints"
+            >Add patients</mat-list-item
+          >
+          <mat-list-item role="listitem" routerLink="loadPateints"
+            >Load patients</mat-list-item
+          >
+        </mat-nav-list>
+      </mat-toolbar>
+    </p>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

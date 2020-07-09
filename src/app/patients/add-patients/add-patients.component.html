@@ -1,0 +1,36 @@
+<form class="container" [formGroup]="patientForm" fxLayoutAlign="center start">
+  <div fxLayout="column">
+    <mat-form-field>
+      <input matInput formControlName="name" placeholder="Enter patient name" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput formControlName="age" placeholder="Enter patient age" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        formControlName="number"
+        placeholder="Enter a cell number"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Parity</mat-label>
+      <select matNativeControl formControlName="parity">
+        <option value="G">G</option>
+        <option value="P">P</option>
+        <option value="Ab">Ab</option>
+        <option value="L">L</option>
+        <option value="D">D</option>
+      </select>
+    </mat-form-field>
+
+    <button mat-raised-button style="float: right;">
+      save
+    </button>
+  </div>
+</form>
+
+{{ patientForm.value | json }}
