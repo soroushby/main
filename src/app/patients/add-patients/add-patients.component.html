@@ -27,10 +27,10 @@
       </select>
     </mat-form-field>
 
-    <button mat-raised-button style="float: right;">
+    <button mat-raised-button style="float: right;" (click)="save()">
       save
     </button>
   </div>
 </form>
-
+{{ tester | json }}
 {{ patientForm.value | json }}

@@ -1,6 +1,8 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 
 const app = express();
+app.use(bodyParser.json());
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -15,6 +17,10 @@ app.use((req, res, next) => {
   next();
 });
 
+app.post("/api/patients", (req, res, next) => {
+  console.log(req.body);
+  res.status(201).json({ message: "successful" });
+});
 app.use("/api/patients", (req, res, next) => {
   const patients = [
     { name: "maryam", age: 32, number: 461789417947891 },

@@ -14,4 +14,16 @@ export class PatientsService {
       )
       .pipe(map((data) => data.patients));
   }
+
+  addPatients(patientName, patientAge, patientsNumber) {
+    const patient = {
+      name: patientName,
+      age: patientAge,
+      number: patientsNumber,
+    };
+    return this.http.post<{ message: string }>(
+      'http://localhost:3000/api/patients',
+      patient
+    );
+  }
 }
