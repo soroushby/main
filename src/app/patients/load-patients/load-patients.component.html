@@ -1,3 +1,22 @@
 <div *ngFor="let patient of patients">
-  {{ patient.name }}
+  <mat-accordion multi="true" *ngIf="patients.length > 0">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        {{ patient.name }}
+      </mat-expansion-panel-header>
+      <p>{{ patient.age }}</p>
+      <p>{{ patient.number }}</p>
+      <p>{{ patient.parity }}</p>
+
+      <mat-action-row>
+        <button mat-button color="primary">EDIT</button>
+        <button mat-button color="warn" (click)="onDelete(patient.id)">
+          DELETE
+        </button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <p class="info-text mat-body-1" *ngIf="patients.length <= 0">
+    No posts added yet!
+  </p>
 </div>

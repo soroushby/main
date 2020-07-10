@@ -16,15 +16,13 @@
       />
     </mat-form-field>
 
-    <mat-form-field>
+    <mat-form-field appearance="fill">
       <mat-label>Parity</mat-label>
-      <select matNativeControl formControlName="parity">
-        <option value="G">G</option>
-        <option value="P">P</option>
-        <option value="Ab">Ab</option>
-        <option value="L">L</option>
-        <option value="D">D</option>
-      </select>
+      <mat-select formControlName="parity">
+        <mat-option *ngFor="let parity of parities" [value]="parity.name">
+          {{ parity.name }}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
 
     <button mat-raised-button style="float: right;" (click)="save()">

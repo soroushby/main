@@ -18,4 +18,10 @@ export class LoadPatientsComponent implements OnInit {
       .subscribe((data) => (this.patients = data));
     console.log(this.patients);
   }
+
+  onDelete(patientId) {
+    this.patientsService.deletePatient(patientId).subscribe((data) => {
+      console.log(data);
+    });
+  }
 }

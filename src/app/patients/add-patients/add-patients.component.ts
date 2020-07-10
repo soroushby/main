@@ -11,6 +11,13 @@ import { PatientsService } from '../patients.service';
 export class AddPatientsComponent implements OnInit {
   patientForm: any;
   tester: any;
+  parities = [
+    { name: 'G' },
+    { name: 'P' },
+    { name: 'Ab' },
+    { name: 'L' },
+    { name: 'D' },
+  ];
   constructor(
     private fb: FormBuilder,
     private patientsService: PatientsService
@@ -29,7 +36,8 @@ export class AddPatientsComponent implements OnInit {
       .addPatients(
         this.patientForm.get('name').value,
         this.patientForm.get('age').value,
-        this.patientForm.get('number').value
+        this.patientForm.get('number').value,
+        this.patientForm.get('parity').value
       )
       .subscribe((data) => (this.tester = data));
   }

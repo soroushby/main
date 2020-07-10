@@ -1,8 +1,19 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const Patient = require("./models/patient");
 
 const app = express();
 app.use(bodyParser.json());
+
+const mongoose = require("mongoose");
+
+mongoose
+  .connect(
+    "mongodb+srv://soroushby:heNuE5e9pRnhj0lF@clinic.zpmgh.mongodb.net/clinic?retryWrites=true&w=majority"
+  )
+  .then(() => {
+    console.log("connected to data base");
+  });
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -18,15 +29,27 @@ app.use((req, res, next) => {
 });
 
 app.post("/api/patients", (req, res, next) => {
-  console.log(req.body);
-  res.status(201).json({ message: "successful" });
+  const patient = new Patient({
+    name: req.body.name,
+    age: req.body.age,
+    number: req.body.number,
+    parity: req.body.parity,
+  });
+  patient.save();
+  console.log(patient);
 });
+
 app.get("/api/patients", (req, res, next) => {
-  const patients = [
-    { name: "maryam", age: 32, number: 461789417947891 },
-    { name: "maryami", age: 99, number: 4691 },
-  ];
-  res.status(200).json({ message: "im the response", patients });
+  Patient.find().then((data) => {
+    res.status(200).json({ message: "im the response", patients: data });
+  });
+});
+
+app.delete("/api/patients/:id", (req, res, next) => {
+  Patient.deleteOne({ _id: req.params.id }).then((result) => {
+    console.log(result);
+    res.status(200).json({ message: "patient deleted" });
+  });
 });
 
 module.exports = app;
