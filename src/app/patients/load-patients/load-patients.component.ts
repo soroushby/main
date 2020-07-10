@@ -10,13 +10,13 @@ import { map, find } from 'rxjs/operators';
 })
 export class LoadPatientsComponent implements OnInit {
   patients: any = [];
+
   constructor(private patientsService: PatientsService) {}
 
   ngOnInit() {
     this.patientsService
       .getPatients()
       .subscribe((data) => (this.patients = data));
-    console.log(this.patients);
   }
 
   onDelete(patientId) {
@@ -24,4 +24,17 @@ export class LoadPatientsComponent implements OnInit {
       console.log(data);
     });
   }
+
+  columnDefs = [
+    {
+      headerName: 'Name',
+      field: 'name',
+      sortable: true,
+      filter: true,
+      width: 600,
+    },
+    { headerName: 'Age', field: 'age', sortable: true, filter: true },
+    { headerName: 'Number', field: 'number', sortable: true, filter: true },
+    { headerName: 'Parity', field: 'parity', sortable: true, filter: true },
+  ];
 }

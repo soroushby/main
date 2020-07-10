@@ -10,6 +10,7 @@ import { ContactUsComponent } from './about/contact-us/contact-us.component';
 import { AddPatientsComponent } from './patients/add-patients/add-patients.component';
 import { LoadPatientsComponent } from './patients/load-patients/load-patients.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AgGridModule } from 'ag-grid-angular';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     FlexLayoutModule,
     ReactiveFormsModule,
     HttpClientModule,
+    AgGridModule.withComponents([]),
   ],
   providers: [],
   bootstrap: [AppComponent],

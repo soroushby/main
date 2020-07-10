@@ -1,4 +1,4 @@
-<div *ngFor="let patient of patients">
+<!-- <div *ngFor="let patient of patients">
   <mat-accordion multi="true" *ngIf="patients.length > 0">
     <mat-expansion-panel>
       <mat-expansion-panel-header>
@@ -24,4 +24,11 @@
   <p class="info-text mat-body-1" *ngIf="patients.length <= 0">
     No posts added yet!
   </p>
-</div>
+</div> -->
+
+<ag-grid-angular
+  class="ag-theme-alpine-dark myGrid"
+  [rowData]="patients"
+  [columnDefs]="columnDefs"
+>
+</ag-grid-angular>
