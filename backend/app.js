@@ -21,7 +21,7 @@ app.post("/api/patients", (req, res, next) => {
   console.log(req.body);
   res.status(201).json({ message: "successful" });
 });
-app.use("/api/patients", (req, res, next) => {
+app.get("/api/patients", (req, res, next) => {
   const patients = [
     { name: "maryam", age: 32, number: 461789417947891 },
     { name: "maryami", age: 99, number: 4691 },
