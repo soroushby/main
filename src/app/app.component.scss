@@ -3,11 +3,17 @@ mat-sidenav,
 mat-sidenav-content {
   height: 100%;
 }
-
+.toolbar {
+  background-color: white;
+  color: black;
+}
 mat-nav-list mat-list-item {
-  color: white;
 }
 
 .sidenav {
-  background-color: red;
+  background: linear-gradient(to left, #000000, #2d2d31);
+  width: 25rem;
+}
+.matlist {
+  color: white;
 }

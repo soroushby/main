@@ -1,20 +1,40 @@
 <mat-sidenav-container class="example-container">
   <mat-sidenav mode="side" #sidenav class="sidenav">
     <mat-nav-list role="list" fxLayout="column">
-      <mat-list-item role="listitem" routerLink="contactus"
+      <mat-list-item role="listitem" routerLink="contactus" class="matlist"
         >Contact us</mat-list-item
       >
-      <mat-list-item role="listitem" routerLink="addPateints"
+      <mat-list-item
+        class="matlist"
+        role="listitem"
+        routerLink="addPateints"
+        *ngIf="auth.loggedIn"
         >Add patients</mat-list-item
       >
-      <mat-list-item role="listitem" routerLink="loadPateints"
+      <mat-list-item
+        class="matlist"
+        role="listitem"
+        routerLink="loadPateints"
+        *ngIf="auth.loggedIn"
         >Load patients</mat-list-item
+      >
+      <mat-list-item
+        (click)="auth.login()"
+        *ngIf="!auth.loggedIn"
+        class="matlist"
+        >Log In</mat-list-item
+      >
+      <mat-list-item
+        (click)="auth.logout()"
+        *ngIf="auth.loggedIn"
+        class="matlist"
+        >Log Out</mat-list-item
       >
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <p>
-      <mat-toolbar color="primary">
+      <mat-toolbar class="toolbar">
         <button
           (click)="sidenav.toggle()"
           mat-icon-button
@@ -28,11 +48,24 @@
           <mat-list-item role="listitem" routerLink="contactus"
             >Contact us</mat-list-item
           >
-          <mat-list-item role="listitem" routerLink="addPateints"
+          <mat-list-item
+            role="listitem"
+            routerLink="addPateints"
+            *ngIf="auth.loggedIn"
             >Add patients</mat-list-item
           >
-          <mat-list-item role="listitem" routerLink="loadPateints"
+          <mat-list-item
+            role="listitem"
+            routerLink="loadPateints"
+            *ngIf="auth.loggedIn"
             >Load patients</mat-list-item
+          >
+
+          <mat-list-item (click)="auth.login()" *ngIf="!auth.loggedIn"
+            >Log In</mat-list-item
+          >
+          <mat-list-item (click)="auth.logout()" *ngIf="auth.loggedIn"
+            >Log Out</mat-list-item
           >
         </mat-nav-list>
       </mat-toolbar>
