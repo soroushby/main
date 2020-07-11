@@ -44,27 +44,35 @@
           <mat-icon>menu</mat-icon>
         </button>
 
-        <mat-nav-list role="list" fxLayout="row">
+        <mat-nav-list role="list" fxLayout="row" fxHide.lt-md>
           <mat-list-item role="listitem" routerLink="contactus"
             >Contact us</mat-list-item
           >
           <mat-list-item
+            fxHide.lt-md
             role="listitem"
             routerLink="addPateints"
             *ngIf="auth.loggedIn"
             >Add patients</mat-list-item
           >
           <mat-list-item
+            fxHide.lt-md
             role="listitem"
             routerLink="loadPateints"
             *ngIf="auth.loggedIn"
             >Load patients</mat-list-item
           >
 
-          <mat-list-item (click)="auth.login()" *ngIf="!auth.loggedIn"
+          <mat-list-item
+            (click)="auth.login()"
+            *ngIf="!auth.loggedIn"
+            fxHide.lt-md
             >Log In</mat-list-item
           >
-          <mat-list-item (click)="auth.logout()" *ngIf="auth.loggedIn"
+          <mat-list-item
+            (click)="auth.logout()"
+            *ngIf="auth.loggedIn"
+            fxHide.lt-md
             >Log Out</mat-list-item
           >
         </mat-nav-list>

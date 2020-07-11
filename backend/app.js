@@ -9,7 +9,8 @@ const mongoose = require("mongoose");
 
 mongoose
   .connect(
-    "mongodb+srv://soroushby:heNuE5e9pRnhj0lF@clinic.zpmgh.mongodb.net/clinic?retryWrites=true&w=majority"
+    "mongodb+srv://soroushby:heNuE5e9pRnhj0lF@clinic.zpmgh.mongodb.net/clinic?retryWrites=true&w=majority",
+    { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => {
     console.log("connected to data base");

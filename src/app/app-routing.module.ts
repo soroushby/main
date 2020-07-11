@@ -5,6 +5,7 @@ import { AddPatientsComponent } from './patients/add-patients/add-patients.compo
 import { LoadPatientsComponent } from './patients/load-patients/load-patients.component';
 
 const routes: Routes = [
+  { path: '', component: ContactUsComponent },
   { path: 'addPateints', component: AddPatientsComponent },
   { path: 'loadPateints', component: LoadPatientsComponent },
   {
