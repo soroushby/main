@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription, observable } from 'rxjs';
 import { map, find } from 'rxjs/operators';
 import { GridApi } from 'ag-grid-community';
+import { Patient } from '../patient';
 
 @Component({
   selector: 'app-load-patients',
