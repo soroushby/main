@@ -16,3 +16,11 @@ mat-sidenav-content {
   color: white;
   font-size: 2rem;
 }
+
+.active {
+  background-color: rgba(96, 96, 255, 0.726);
+}
+
+.active:hover {
+  background-color: rgba(96, 96, 255, 0.726);
+}

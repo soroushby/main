@@ -2,21 +2,25 @@
   <mat-sidenav mode="side" #sidenav class="sidenav">
     <mat-nav-list role="list" fxLayout="column">
       <mat-list-item role="listitem" routerLink="contactus" class="matlist"
-        >Contact us</mat-list-item
+        >Contact Us</mat-list-item
+      >
+
+      <mat-list-item role="listitem" routerLink="aboutme" class="matlist"
+        >About Me</mat-list-item
       >
       <mat-list-item
         class="matlist"
         role="listitem"
         routerLink="addPateints"
         *ngIf="auth.loggedIn"
-        >Add patients</mat-list-item
+        >Add Patients</mat-list-item
       >
       <mat-list-item
         class="matlist"
         role="listitem"
         routerLink="loadPateints"
         *ngIf="auth.loggedIn"
-        >Load patients</mat-list-item
+        >Load Patients</mat-list-item
       >
       <mat-list-item
         (click)="auth.login()"
@@ -45,34 +49,48 @@
         </button>
 
         <mat-nav-list role="list" fxLayout="row" fxHide.lt-md>
-          <mat-list-item role="listitem" routerLink="contactus"
-            >Contact us</mat-list-item
+          <mat-list-item
+            role="listitem"
+            routerLink="contactus"
+            routerLinkActive="active"
+            >Contact Us</mat-list-item
+          >
+
+          <mat-list-item
+            role="listitem"
+            routerLink="aboutme"
+            routerLinkActive="active"
+            >About Me</mat-list-item
           >
           <mat-list-item
             fxHide.lt-md
             role="listitem"
             routerLink="addPateints"
             *ngIf="auth.loggedIn"
-            >Add patients</mat-list-item
+            routerLinkActive="active"
+            >Add Patients</mat-list-item
           >
           <mat-list-item
             fxHide.lt-md
             role="listitem"
             routerLink="loadPateints"
             *ngIf="auth.loggedIn"
-            >Load patients</mat-list-item
+            routerLinkActive="active"
+            >Load Patients</mat-list-item
           >
 
           <mat-list-item
             (click)="auth.login()"
             *ngIf="!auth.loggedIn"
             fxHide.lt-md
+            routerLinkActive="active"
             >Log In</mat-list-item
           >
           <mat-list-item
             (click)="auth.logout()"
             *ngIf="auth.loggedIn"
             fxHide.lt-md
+            routerLinkActive="active"
             >Log Out</mat-list-item
           >
         </mat-nav-list>

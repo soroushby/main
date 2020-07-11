@@ -1,4 +1,4 @@
-<div *ngFor="let patient of patients" fxLayout.lt-sm="column">
+<!-- <div *ngFor="let patient of patients" fxLayout.lt-sm="column">
   <mat-accordion multi="true" *ngIf="patients.length > 0">
     <mat-expansion-panel>
       <mat-expansion-panel-header>
@@ -24,11 +24,27 @@
   <p class="info-text mat-body-1" *ngIf="patients.length <= 0">
     No posts added yet!
   </p>
+</div> -->
+<div class="actions" fxLayout="row">
+  <button mat-raised-button color="primary" (click)="selectAll()">
+    select All
+  </button>
+
+  <button mat-raised-button color="primary" (click)="deSelectAll()">
+    Deselect all
+  </button>
+
+  <button mat-raised-button color="primary">
+    Delete
+  </button>
 </div>
-<!--
 <ag-grid-angular
   class="ag-theme-alpine-dark myGrid"
-  [rowData]="patients"
+  [rowData]="patients | async"
   [columnDefs]="columnDefs"
+  (gridReady)="onGridReady($event)"
+  rowSelection="multiple"
 >
-</ag-grid-angular> -->
+</ag-grid-angular>
+
+<button mat-button (click)="selectAll()">select All</button>

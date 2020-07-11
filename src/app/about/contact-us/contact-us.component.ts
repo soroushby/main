@@ -6,12 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact-us.component.scss'],
 })
 export class ContactUsComponent implements OnInit {
-  informations = [
-    { name: 'Education', value: 'dada' },
-    { name: 'Biography', value: 'dada' },
-    { name: 'Experiences', value: 'dada' },
-    { name: 'Medical interests', value: 'dada' },
-  ];
   constructor() {}
 
   ngOnInit(): void {}

@@ -1,44 +1,61 @@
-<form
-  class="container"
-  [formGroup]="patientForm"
-  fxLayoutAlign="center start"
-  fxLayout.lt-sm="column"
->
-  <div fxLayout="column">
-    <mat-form-field>
-      <input matInput formControlName="name" placeholder="Enter patient name" />
-    </mat-form-field>
+<div class="main" fxLayoutAlign="center center" fxLayout.lt-sm="column">
+  <mat-card class="card" fxLayout.lt-sm="column">
+    <form class="container" [formGroup]="patientForm" fxLayout.lt-sm="column">
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <mat-form-field>
+          <input
+            matInput
+            formControlName="name"
+            placeholder="Enter patient name"
+          />
+          <mat-error *ngIf="patientForm.get('name').hasError('required')">
+            Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
 
-    <mat-form-field>
-      <input matInput formControlName="age" placeholder="Enter patient age" />
-    </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            formControlName="age"
+            placeholder="Enter patient age"
+            type="number"
+          />
+          <mat-error *ngIf="patientForm.get('age').hasError('required')">
+            Age is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
 
-    <mat-form-field>
-      <input
-        matInput
-        formControlName="number"
-        placeholder="Enter a cell number"
-      />
-    </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            formControlName="number"
+            placeholder="Enter a cell number"
+            type="number"
+          />
+          <mat-error *ngIf="patientForm.get('number').hasError('required')">
+            Number is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Parity</mat-label>
-      <mat-select formControlName="parity">
-        <mat-option *ngFor="let parity of parities" [value]="parity.name">
-          {{ parity.name }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Parity</mat-label>
+          <mat-select formControlName="parity">
+            <mat-option *ngFor="let parity of parities" [value]="parity.name">
+              {{ parity.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
 
-    <button
-      mat-raised-button
-      style="float: right;"
-      (click)="save()"
-      routerLink="/loadPateints"
-    >
-      save
-    </button>
-  </div>
-</form>
-{{ tester | json }}
-{{ patientForm.value | json }}
+        <button
+          mat-raised-button
+          style="float: right;"
+          (click)="save()"
+          routerLink="/loadPateints"
+          class="submit-button"
+        >
+          save
+        </button>
+      </div>
+    </form>
+  </mat-card>
+</div>

@@ -4,6 +4,7 @@ import { ContactUsComponent } from './about/contact-us/contact-us.component';
 import { AddPatientsComponent } from './patients/add-patients/add-patients.component';
 import { LoadPatientsComponent } from './patients/load-patients/load-patients.component';
 import { PageNotfoundComponent } from './about/page-notfound/page-notfound.component';
+import { AboutmeComponent } from './about/aboutme/aboutme.component';
 
 const routes: Routes = [
   { path: '', component: ContactUsComponent },
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'contactus',
     component: ContactUsComponent,
+  },
+  {
+    path: 'aboutme',
+    component: AboutmeComponent,
   },
   { path: '', component: ContactUsComponent },
   { path: '**', component: PageNotfoundComponent },

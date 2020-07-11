@@ -1,7 +1,37 @@
+.main {
+  height: 100%;
+  background-image: url(C:\Users\User\Desktop\mozhganDaneshvar\mainMatab\src\assets\birth.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-size: 1.6rem;
+}
+
+.card {
+  min-height: 30rem;
+  width: auto;
+
+  background-color: rgba(245, 245, 245, 0.753);
+  border-top: rgb(110, 110, 110) solid 2rem;
+  border-top: rgba(42, 42, 235, 0.877) solid 2rem;
+  margin-bottom: 20rem;
+}
+
+mat-form-field {
+}
+form {
+}
 .container {
   width: 100%;
 }
 
 mat-form-field {
   width: 50rem;
+}
+
+.submit-button {
+  width: 14rem;
+  background-color: rgba(42, 42, 235, 0.877);
+  color: white;
+  border-radius: 300px;
+  margin-top: 2rem;
 }
