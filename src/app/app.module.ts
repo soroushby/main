@@ -11,6 +11,7 @@ import { AddPatientsComponent } from './patients/add-patients/add-patients.compo
 import { LoadPatientsComponent } from './patients/load-patients/load-patients.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AgGridModule } from 'ag-grid-angular';
+import { PageNotfoundComponent } from './about/page-notfound/page-notfound.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { AgGridModule } from 'ag-grid-angular';
     ContactUsComponent,
     AddPatientsComponent,
     LoadPatientsComponent,
+    PageNotfoundComponent,
   ],
   imports: [
     BrowserModule,

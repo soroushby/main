@@ -1,1 +1,41 @@
-<div class="main"></div>
+<div class="main" fxLayout.lt-md="column">
+  <div
+    fxLayout.lt-md="column"
+    class="cards-container"
+    fxLayout="row"
+    fxLayoutAlign="center center"
+    fxLayoutGap="15rem"
+  >
+    <mat-card class="card1" fxLayoutAlign="start center" fxLayout="column">
+      <mat-card-header>
+        <!-- <mat-card-title>About me</mat-card-title> -->
+      </mat-card-header>
+
+      <mat-card-content
+        fxLayoutAlign="center center"
+        fxLayout="column"
+        fxLayoutGap="2rem"
+      >
+        <div class="image"></div>
+        <p class="name">
+          Dr. Mozhgan Daneshvar
+        </p>
+        <p class="name">
+          Gynecologist And Obstetrician
+        </p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="card2">
+      <div fxLayout.lt-sm="column">
+        <mat-accordion multi="true" *ngFor="let information of informations">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              {{ information.name }}</mat-expansion-panel-header
+            >
+            {{ information.value }}
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </mat-card>
+  </div>
+</div>

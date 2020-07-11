@@ -1,7 +1,31 @@
 .main {
   min-height: 100vh;
+  width: 100%;
+  background-image: url(C:\Users\User\Desktop\mozhganDaneshvar\mainMatab\src\assets\jimmy-conover-LtKoW6kh2eE-unsplash.jpg);
 
-  background-image: url(src\assets\jimmy-conover-LtKoW6kh2eE-unsplash.jpg);
-  background-size: 100% 100%;
+  background-size: cover;
   background-repeat: no-repeat;
+}
+
+.cards-container {
+  min-height: 100vh;
+}
+.card1 {
+  height: 60rem;
+  width: 40rem;
+  background-color: rgba(255, 255, 255, 0.507);
+}
+
+.card2 {
+  min-height: 10rem;
+  width: 79rem;
+  background-color: rgba(255, 255, 255, 0.507);
+}
+
+.image {
+  background-image: url(C:\Users\User\Desktop\mozhganDaneshvar\mainMatab\src\assets\operation.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 40rem;
+  width: 32rem;
 }

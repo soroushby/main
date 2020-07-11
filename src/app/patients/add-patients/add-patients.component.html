@@ -1,4 +1,9 @@
-<form class="container" [formGroup]="patientForm" fxLayoutAlign="center start">
+<form
+  class="container"
+  [formGroup]="patientForm"
+  fxLayoutAlign="center start"
+  fxLayout.lt-sm="column"
+>
   <div fxLayout="column">
     <mat-form-field>
       <input matInput formControlName="name" placeholder="Enter patient name" />

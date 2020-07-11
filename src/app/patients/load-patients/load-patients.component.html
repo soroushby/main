@@ -1,4 +1,4 @@
-<div *ngFor="let patient of patients">
+<div *ngFor="let patient of patients" fxLayout.lt-sm="column">
   <mat-accordion multi="true" *ngIf="patients.length > 0">
     <mat-expansion-panel>
       <mat-expansion-panel-header>
