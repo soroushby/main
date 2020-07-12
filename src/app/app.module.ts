@@ -13,18 +13,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { AgGridModule } from 'ag-grid-angular';
 import { PageNotfoundComponent } from './about/page-notfound/page-notfound.component';
 import { AboutmeComponent } from './about/aboutme/aboutme.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactUsComponent,
-    AddPatientsComponent,
-    LoadPatientsComponent,
     PageNotfoundComponent,
     AboutmeComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     MaterialModule,
     FlexLayoutModule,

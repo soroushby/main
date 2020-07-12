@@ -8,8 +8,7 @@ import { AboutmeComponent } from './about/aboutme/aboutme.component';
 
 const routes: Routes = [
   { path: '', component: ContactUsComponent },
-  { path: 'addPateints', component: AddPatientsComponent },
-  { path: 'loadPateints', component: LoadPatientsComponent },
+
   {
     path: 'contactus',
     component: ContactUsComponent,
@@ -19,6 +18,11 @@ const routes: Routes = [
     component: AboutmeComponent,
   },
   { path: '', component: ContactUsComponent },
+  {
+    path: 'patients',
+    loadChildren: () =>
+      import('./patients/patients.module').then((m) => m.PatientsModule),
+  },
   { path: '**', component: PageNotfoundComponent },
 ];
 
