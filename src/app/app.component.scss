@@ -10,13 +10,31 @@ mat-sidenav-content {
 
 .sidenav {
   background: linear-gradient(to left, #000000, #2d2d31);
-  width: 22rem;
+  width: 12rem;
 }
 .matlist {
   color: white;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .active {
   text-decoration: underline;
+}
+
+.toolbar {
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  list-style-type: none;
+}
+
+a:hover {
+  color: gray;
+}
+
+li {
+  list-style: none;
 }

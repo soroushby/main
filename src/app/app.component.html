@@ -1,14 +1,19 @@
 <mat-sidenav-container class="example-container">
-  <mat-sidenav mode="side" #sidenav class="sidenav">
-    <mat-nav-list role="list" fxLayout="column">
+  <mat-sidenav mode="side" #sidenav class="sidenav" fxHide.gt-md>
+    <mat-nav-list role="list" fxLayout="column" fxLayoutAlign="center end">
       <mat-list-item
         role="listitem"
         routerLink="about/contactus"
+        (click)="sidenav.close()"
         class="matlist"
         >Contact Us</mat-list-item
       >
 
-      <mat-list-item role="listitem" routerLink="about/aboutme" class="matlist"
+      <mat-list-item
+        role="listitem"
+        routerLink="about/aboutme"
+        class="matlist"
+        (click)="sidenav.close()"
         >About Me</mat-list-item
       >
       <mat-list-item
@@ -16,11 +21,13 @@
         role="listitem"
         routerLink="patients/addPatients"
         *ngIf="auth.loggedIn"
+        (click)="sidenav.close()"
         >Add Patients</mat-list-item
       >
       <mat-list-item
         class="matlist"
         role="listitem"
+        (click)="sidenav.close()"
         routerLink="patients/loadPatients"
         *ngIf="auth.loggedIn"
         >Load Patients</mat-list-item
@@ -29,81 +36,134 @@
         (click)="auth.login()"
         *ngIf="!auth.loggedIn"
         class="matlist"
+        (click)="sidenav.close()"
         >Log In</mat-list-item
       >
       <mat-list-item
         (click)="auth.logout()"
         *ngIf="auth.loggedIn"
         class="matlist"
+        (click)="sidenav.close()"
         >Log Out</mat-list-item
       >
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <p>
-      <mat-toolbar class="toolbar">
-        <button
-          (click)="sidenav.toggle()"
-          mat-icon-button
-          class="example-icon"
-          aria-label="Example icon-button with menu icon"
-        >
-          <mat-icon>menu</mat-icon>
-        </button>
+    <mat-toolbar class="toolbar">
+      <button
+        (click)="sidenav.toggle()"
+        fxHide.gt-md
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with menu icon"
+        fxLayoutAlign="start center"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
 
-        <mat-nav-list
-          role="list"
-          fxLayout="row"
-          fxHide.lt-md
-          fxLayoutGap="5rem"
+      <!-- <mat-nav-list
+        role="list"
+        fxLayout="row"
+        fxHide.lt-md
+        fxLayoutAlign="end center"
+        fxFlex="80%"
+      >
+        <mat-list-item
+          role="listitem"
+          routerLink="about/contactus"
+          routerLinkActive="active"
+          >Contact Us</mat-list-item
         >
-          <mat-list-item
+
+        <mat-list-item
+          role="listitem"
+          routerLink="about/aboutme"
+          routerLinkActive="active"
+          >About Me</mat-list-item
+        >
+        <mat-list-item
+          fxHide.lt-md
+          role="listitem"
+          routerLink="patients/addPatients"
+          *ngIf="auth.loggedIn"
+          routerLinkActive="active"
+          >Add Patients</mat-list-item
+        >
+        <mat-list-item
+          fxHide.lt-md
+          role="listitem"
+          routerLink="patients/loadPatients"
+          *ngIf="auth.loggedIn"
+          routerLinkActive="active"
+          >Load Patients</mat-list-item
+        >
+
+        <mat-list-item
+          (click)="auth.login()"
+          *ngIf="!auth.loggedIn"
+          fxHide.lt-md
+          routerLinkActive="active"
+          >Log In</mat-list-item
+        >
+        <mat-list-item
+          (click)="auth.logout()"
+          *ngIf="auth.loggedIn"
+          fxHide.lt-md
+          routerLinkActive="active"
+          >Log Out</mat-list-item
+        >
+      </mat-nav-list> -->
+      <ul
+        fxHide.lt-md
+        role="list"
+        fxLayout="row"
+        class="toolbar"
+        fxLayoutAlign="start center"
+        fxLayoutGap="5rem"
+        fxFlex
+      >
+        <li>
+          <a
             role="listitem"
             routerLink="about/contactus"
             routerLinkActive="active"
-            >Contact Us</mat-list-item
+            >Contact Us</a
           >
+        </li>
 
-          <mat-list-item
+        <li>
+          <a
             role="listitem"
             routerLink="about/aboutme"
             routerLinkActive="active"
-            >About Me</mat-list-item
+            >About Me</a
           >
-          <mat-list-item
-            fxHide.lt-md
+        </li>
+        <li *ngIf="auth.loggedIn">
+          <a
             role="listitem"
             routerLink="patients/addPatients"
-            *ngIf="auth.loggedIn"
             routerLinkActive="active"
-            >Add Patients</mat-list-item
+            >Add Patients</a
           >
-          <mat-list-item
-            fxHide.lt-md
+        </li>
+        <li *ngIf="auth.loggedIn">
+          <a
             role="listitem"
             routerLink="patients/loadPatients"
-            *ngIf="auth.loggedIn"
             routerLinkActive="active"
-            >Load Patients</mat-list-item
+            >Load Patients</a
           >
+        </li>
+        <li *ngIf="!auth.loggedIn">
+          <a (click)="auth.login()">Log In</a>
+        </li>
+        <li *ngIf="auth.loggedIn">
+          <a (click)="auth.logout()">Log Out</a>
+        </li>
+      </ul>
+    </mat-toolbar>
 
-          <mat-list-item
-            (click)="auth.login()"
-            *ngIf="!auth.loggedIn"
-            fxHide.lt-md
-            routerLinkActive="active"
-            >Log In</mat-list-item
-          >
-          <mat-list-item
-            (click)="auth.logout()"
-            *ngIf="auth.loggedIn"
-            fxHide.lt-md
-            routerLinkActive="active"
-            >Log Out</mat-list-item
-          >
-        </mat-nav-list>
-      </mat-toolbar>
-    </p>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
