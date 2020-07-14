@@ -41,7 +41,7 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <p>
-      <mat-toolbar class="toolbar" fxLayoutAlign=" center center">
+      <mat-toolbar class="toolbar">
         <button
           (click)="sidenav.toggle()"
           mat-icon-button
@@ -51,7 +51,12 @@
           <mat-icon>menu</mat-icon>
         </button>
 
-        <mat-nav-list role="list" fxLayout="row" fxHide.lt-md fxFlex>
+        <mat-nav-list
+          role="list"
+          fxLayout="row"
+          fxHide.lt-md
+          fxLayoutGap="5rem"
+        >
           <mat-list-item
             role="listitem"
             routerLink="about/contactus"
