@@ -12,6 +12,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { DpDatePickerModule } from 'ng2-jalali-date-picker';
 
 @NgModule({
   declarations: [],
@@ -19,7 +21,7 @@ import { BrowserModule } from '@angular/platform-browser';
     CommonModule,
     MatButtonModule,
     MatSidenavModule,
-
+    MatDatepickerModule,
     MatToolbarModule,
     MatIconModule,
     MatListModule,
@@ -28,11 +30,12 @@ import { BrowserModule } from '@angular/platform-browser';
     MatExpansionModule,
     MatSelectModule,
     MatCardModule,
+    DpDatePickerModule,
   ],
   exports: [
     MatButtonModule,
     MatSidenavModule,
-
+    MatDatepickerModule,
     MatToolbarModule,
     MatIconModule,
     MatListModule,
@@ -41,6 +44,7 @@ import { BrowserModule } from '@angular/platform-browser';
     MatExpansionModule,
     MatSelectModule,
     MatCardModule,
+    DpDatePickerModule,
   ],
 })
 export class MaterialModule {}

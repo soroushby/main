@@ -35,6 +35,7 @@ app.post("/api/patients", (req, res, next) => {
     age: req.body.age,
     number: req.body.number,
     parity: req.body.parity,
+    date: req.body.date,
   });
   patient.save();
   console.log(patient);

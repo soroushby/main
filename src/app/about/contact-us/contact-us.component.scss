@@ -1,0 +1,88 @@
+.main {
+  height: 100vh;
+}
+
+.image-container {
+  background-image: url("../../../assets/mozhgan1.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.image-res {
+  height: 100vh;
+}
+
+// .cards-container {
+// }
+// .boxmain {
+//   height: 50%;
+// }
+// .boxsecond {
+//   height: 50%;
+// }
+// .box1 {
+//   height: 100%;
+//   width: 50%;
+// }
+
+// .box2 {
+//   height: 100%;
+//   width: 50%;
+// }
+
+// .box3 {
+//   height: 100%;
+//   width: 50%;
+// }
+
+// .box4 {
+//   height: 100%;
+//   width: 50%;
+// }
+
+.boxmain {
+  height: 50%;
+}
+.boxsecond {
+  height: 50%;
+}
+.card1 {
+  width: 100%;
+  height: 100%;
+  overflow-wrap: linear;
+  background-image: linear-gradient(
+    to right,
+    rgb(58, 58, 58),
+    rgb(180, 179, 179)
+  );
+  border-radius: 0 8rem 8rem 0;
+  font-size: 8rem;
+  letter-spacing: 0.2rem;
+  font-weight: 600;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: whitesmoke;
+  -webkit-border-radius: 0 8rem 8rem 0;
+  -moz-border-radius: 0 8rem 8rem 0;
+  -ms-border-radius: 0 8rem 8rem 0;
+  -o-border-radius: 0 8rem 8rem 0;
+}
+
+.card2 {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    to left,
+    rgb(58, 58, 58),
+    rgb(180, 179, 179)
+  );
+  border-radius: 8rem 0 0 8rem;
+  font-size: 8rem;
+  letter-spacing: 0.2rem;
+  font-weight: 600;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: whitesmoke;
+  -webkit-border-radius: 8rem 0 0 8rem;
+  -moz-border-radius: 8rem 0 0 8rem;
+  -ms-border-radius: 8rem 0 0 8rem;
+  -o-border-radius: 8rem 0 0 8rem;
+}

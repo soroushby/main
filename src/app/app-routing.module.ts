@@ -10,18 +10,14 @@ const routes: Routes = [
   { path: '', component: ContactUsComponent },
 
   {
-    path: 'contactus',
-    component: ContactUsComponent,
-  },
-  {
-    path: 'aboutme',
-    component: AboutmeComponent,
-  },
-  { path: '', component: ContactUsComponent },
-  {
     path: 'patients',
     loadChildren: () =>
       import('./patients/patients.module').then((m) => m.PatientsModule),
+  },
+  {
+    path: 'about',
+    loadChildren: () =>
+      import('./about/about.module').then((m) => m.AboutModule),
   },
   { path: '**', component: PageNotfoundComponent },
 ];

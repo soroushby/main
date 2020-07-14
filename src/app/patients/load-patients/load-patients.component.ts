@@ -41,6 +41,7 @@ export class LoadPatientsComponent implements OnInit {
     },
     { headerName: 'Number', field: 'number', sortable: true, filter: true },
     { headerName: 'Parity', field: 'parity', sortable: true, filter: true },
+    { headerName: 'Date', field: 'date', sortable: true, filter: true },
   ];
 
   onGridReady({ api }: { api: GridApi }) {

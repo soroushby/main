@@ -1,6 +1,6 @@
 .main {
   min-height: 100vh;
-  width: 100%;
+
   background-image: url(C:\Users\User\Desktop\mozhganDaneshvar\mainMatab\src\assets\jimmy-conover-LtKoW6kh2eE-unsplash.jpg);
 
   background-size: cover;
@@ -11,14 +11,13 @@
   min-height: 100vh;
 }
 .card1 {
-  height: 60rem;
   width: 40rem;
   background-color: rgba(255, 255, 255, 0.507);
 }
 
 .card2 {
-  min-height: 10rem;
   width: 79rem;
+
   background-color: rgba(255, 255, 255, 0.507);
 }
 
@@ -32,4 +31,8 @@
 
 .header {
   margin-top: 1rem;
+}
+
+.res {
+  width: 100%;
 }

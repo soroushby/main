@@ -21,18 +21,20 @@ export class PatientsService {
               number: data.number,
               parity: data.parity,
               id: data._id,
+              date: data.date,
             };
           })
         )
       );
   }
 
-  addPatients(patientName, patientAge, patientsNumber, parity) {
+  addPatients(patientName, patientAge, patientsNumber, parity, date) {
     const patient = {
       name: patientName,
       age: patientAge,
       number: patientsNumber,
       parity: parity,
+      date: date,
     };
     return this.http.post<{ message: string }>(
       'http://localhost:3000/api/patients',

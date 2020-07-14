@@ -28,7 +28,8 @@ export class AddPatientsComponent implements OnInit {
       name: ['', Validators.required],
       age: ['', Validators.required],
       number: ['', Validators.required],
-      parity: [''],
+      parity: ['', Validators.required],
+      date: ['', Validators.required],
     });
   }
   save() {
@@ -37,8 +38,14 @@ export class AddPatientsComponent implements OnInit {
         this.patientForm.get('name').value,
         this.patientForm.get('age').value,
         this.patientForm.get('number').value,
-        this.patientForm.get('parity').value
+        this.patientForm.get('parity').value,
+        this.patientForm.get('date').value
       )
       .subscribe((data) => (this.tester = data));
   }
+
+  datePickerConfig = {
+    drops: 'up',
+    format: 'YY/M/D',
+  };
 }

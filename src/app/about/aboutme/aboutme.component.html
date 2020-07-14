@@ -1,10 +1,11 @@
-<div class="main" fxLayout.lt-md="column">
+<div class="main">
   <div
     fxLayout.lt-md="column"
     class="cards-container"
     fxLayout="row"
     fxLayoutAlign="center center"
     fxLayoutGap="15rem"
+    fxLayout.lt-md="column"
   >
     <mat-card class="card1" fxLayoutAlign="start center" fxLayout="column">
       <mat-card-header>
@@ -25,8 +26,8 @@
         </p>
       </mat-card-content>
     </mat-card>
-    <mat-card class="card2">
-      <div fxLayout.lt-sm="column">
+    <mat-card class="card2" ngClass.lt-md="res">
+      <div>
         <mat-accordion multi="true" *ngFor="let information of informations">
           <mat-expansion-panel class="header">
             <mat-expansion-panel-header>

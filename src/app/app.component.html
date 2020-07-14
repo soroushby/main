@@ -1,24 +1,27 @@
 <mat-sidenav-container class="example-container">
   <mat-sidenav mode="side" #sidenav class="sidenav">
     <mat-nav-list role="list" fxLayout="column">
-      <mat-list-item role="listitem" routerLink="contactus" class="matlist"
+      <mat-list-item
+        role="listitem"
+        routerLink="about/contactus"
+        class="matlist"
         >Contact Us</mat-list-item
       >
 
-      <mat-list-item role="listitem" routerLink="aboutme" class="matlist"
+      <mat-list-item role="listitem" routerLink="about/aboutme" class="matlist"
         >About Me</mat-list-item
       >
       <mat-list-item
         class="matlist"
         role="listitem"
-        routerLink="addPateints"
+        routerLink="patients/addPatients"
         *ngIf="auth.loggedIn"
         >Add Patients</mat-list-item
       >
       <mat-list-item
         class="matlist"
         role="listitem"
-        routerLink="loadPateints"
+        routerLink="patients/loadPatients"
         *ngIf="auth.loggedIn"
         >Load Patients</mat-list-item
       >
@@ -38,7 +41,7 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <p>
-      <mat-toolbar class="toolbar">
+      <mat-toolbar class="toolbar" fxLayoutAlign=" center center">
         <button
           (click)="sidenav.toggle()"
           mat-icon-button
@@ -48,24 +51,24 @@
           <mat-icon>menu</mat-icon>
         </button>
 
-        <mat-nav-list role="list" fxLayout="row" fxHide.lt-md>
+        <mat-nav-list role="list" fxLayout="row" fxHide.lt-md fxFlex>
           <mat-list-item
             role="listitem"
-            routerLink="contactus"
+            routerLink="about/contactus"
             routerLinkActive="active"
             >Contact Us</mat-list-item
           >
 
           <mat-list-item
             role="listitem"
-            routerLink="aboutme"
+            routerLink="about/aboutme"
             routerLinkActive="active"
             >About Me</mat-list-item
           >
           <mat-list-item
             fxHide.lt-md
             role="listitem"
-            routerLink="/patients/addPatients"
+            routerLink="patients/addPatients"
             *ngIf="auth.loggedIn"
             routerLinkActive="active"
             >Add Patients</mat-list-item
@@ -73,7 +76,7 @@
           <mat-list-item
             fxHide.lt-md
             role="listitem"
-            routerLink="patients/loadPateints"
+            routerLink="patients/loadPatients"
             *ngIf="auth.loggedIn"
             routerLinkActive="active"
             >Load Patients</mat-list-item

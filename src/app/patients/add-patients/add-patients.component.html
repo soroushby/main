@@ -1,12 +1,12 @@
-<div class="main" fxLayoutAlign="center center" fxLayout.lt-sm="column">
-  <mat-card class="card" fxLayout.lt-sm="column">
-    <form class="container" [formGroup]="patientForm" fxLayout.lt-sm="column">
-      <div fxLayout="column" fxLayoutAlign="center center">
+<div class="main" fxLayoutAlign="center center">
+  <mat-card class="card" ngClass.lt-md="res">
+    <form class="container" [formGroup]="patientForm">
+      <div fxLayout="column" fxLayoutAlign="center center" ngClass.lt-md="res">
         <mat-form-field>
           <input
             matInput
             formControlName="name"
-            placeholder="Enter patient name"
+            placeholder="Enter patient's name"
           />
           <mat-error *ngIf="patientForm.get('name').hasError('required')">
             Name is <strong>required</strong>
@@ -17,7 +17,7 @@
           <input
             matInput
             formControlName="age"
-            placeholder="Enter patient age"
+            placeholder="Enter patient's age"
             type="number"
           />
           <mat-error *ngIf="patientForm.get('age').hasError('required')">
@@ -46,12 +46,24 @@
           </mat-select>
         </mat-form-field>
 
+        <dp-date-picker
+          class="a1"
+          id="fromDate"
+          dir="rtl"
+          mode="day"
+          placeholder="تاریخ"
+          theme="dp-material"
+          formControlName="date"
+        >
+        </dp-date-picker>
+
         <button
           mat-raised-button
           style="float: right;"
           (click)="save()"
-          routerLink="/loadPateints"
+          routerLink="/patients/loadPatients"
           class="submit-button"
+          [disabled]="patientForm.invalid"
         >
           save
         </button>

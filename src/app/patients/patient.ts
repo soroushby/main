@@ -4,4 +4,5 @@ export interface Patient {
   number: number;
   parity: any;
   id?: any;
+  date: any;
 }
