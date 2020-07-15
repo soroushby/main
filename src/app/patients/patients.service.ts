@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { Patient } from './models/patient';
+import { observable, Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
 export class PatientsService {
   constructor(private http: HttpClient) {}
 
-  getPatients() {
+  getPatients(): Observable<Patient> {
     return this.http
       .get<{ message: string; patients: any }>(
         'http://localhost:3000/api/patients'

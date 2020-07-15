@@ -1,5 +1,5 @@
 <!-- <div *ngFor="let patient of patients" fxLayout.lt-sm="column">
-  <mat-accordion multi="true" *ngIf="patients.length > 0">
+  <mat-accordion multi="true">
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         {{ patient.name }}
@@ -21,10 +21,12 @@
       </mat-action-row>
     </mat-expansion-panel>
   </mat-accordion>
-  <p class="info-text mat-body-1" *ngIf="patients.length <= 0">
+  <p class="info-text mat-body-1">
     No posts added yet!
   </p>
-</div> -->
+</div>
+
+{{ patients | json }} -->
 <div class="actions" fxLayout="row">
   <button mat-raised-button color="primary" (click)="selectAll()">
     select All
@@ -40,7 +42,7 @@
 </div>
 <ag-grid-angular
   class="ag-theme-alpine-dark myGrid"
-  [rowData]="patients | async"
+  [rowData]="patients$ | async"
   [columnDefs]="columnDefs"
   (gridReady)="onGridReady($event)"
   rowSelection="multiple"

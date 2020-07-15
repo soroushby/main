@@ -1,9 +1,9 @@
 import { PatientsService } from './../patients.service';
 import { Component, OnInit } from '@angular/core';
-import { Subscription, observable } from 'rxjs';
+import { Subscription, observable, Observable } from 'rxjs';
 import { map, find } from 'rxjs/operators';
 import { GridApi } from 'ag-grid-community';
-import { Patient } from '../patient';
+import { Patient } from '../models/patient';
 
 @Component({
   selector: 'app-load-patients',
@@ -23,7 +23,7 @@ export class LoadPatientsComponent implements OnInit {
     });
   }
 
-  patients = this.patientsService.getPatients();
+  patients$: Observable<Patient> = this.patientsService.getPatients();
 
   columnDefs = [
     {
@@ -51,6 +51,7 @@ export class LoadPatientsComponent implements OnInit {
 
   selectAll() {
     this.gridApi.selectAll();
+    this.patients$.subscribe((data) => data.name);
   }
 
   deSelectAll() {
