@@ -67,10 +67,43 @@
   <div class="image-container" fxFlex="40%"></div>
 </div> -->
 
-<div class="main" fxLayout="row">
-  <div class="box1" fxFlex="33%"></div>
-  <div class="box2" fxFlex="33%"></div>
-  <div class="box3" fxFlex="33%">
+<div class="main" fxLayout="row" fxLayout.lt-md="column">
+  <div class="box1" fxFlex="33%" fxLayoutAlign="center center">
+    <mat-card class="card3" fxLayoutAlign="start center" fxLayout="column">
+      <mat-card-header>
+        <mat-card-title>Contact me</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content fxLayout="column">
+        <div>
+          Maryam Hospital, West Arghavan Alley, 45 Meters Golshahr Ave, Karaj,
+          Alborz, Iran
+        </div>
+        <div>+982633509323</div>
+        <div>+982633502347</div>
+        <div>info@maryamhospital.ir</div>
+        <div>maryamhospital.ir@gmail.com</div>
+      </mat-card-content>
+      <mat-card-actions> </mat-card-actions>
+    </mat-card>
+  </div>
+  <div class="box2" fxFlex="33%" fxLayoutAlign="center center">
+    <mat-card class="card3" fxLayout="column" fxLayoutAlign="center center">
+      <mat-card-header>
+        <mat-card-title></mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content
+        fxLayout="column"
+        class="image-container"
+        fxLayoutAlign="center center"
+      >
+        <div class="image"></div
+      ></mat-card-content>
+      <mat-card-actions> </mat-card-actions>
+    </mat-card>
+  </div>
+  <div class="box3" fxFlex="33%" fxLayoutAlign="center center">
     <mat-card class="card3" fxLayoutAlign="start center" fxLayout="column">
       <mat-card-header>
         <mat-card-title>Contact me</mat-card-title>

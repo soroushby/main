@@ -91,12 +91,30 @@
 }
 .box1 {
   background-color: beige;
+  min-height: 100vh;
 }
 
 .box2 {
   background-color: chocolate;
+  min-height: 100vh;
 }
 
 .box3 {
   background-color: darkred;
+  min-height: 100vh;
+}
+.card3 {
+  height: 80%;
+  width: 80%;
+}
+.image-container {
+  height: 90%;
+  width: 90%;
+}
+.image {
+  background-image: url("../../../assets/images/mozhgan1.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 70rem;
+  width: 100%;
 }
