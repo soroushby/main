@@ -88,24 +88,27 @@
 // }
 .main {
   min-height: 100vh;
+  // background-color: rgb(120, 120, 207);
+  background-image: url(../../../assets/images/126.jpg);
 }
 .box1 {
-  background-color: beige;
+  // background-color: rgb(120, 120, 207);
   min-height: 100vh;
 }
 
 .box2 {
-  background-color: chocolate;
+  // background-color: rgb(80, 100, 207);
   min-height: 100vh;
 }
 
 .box3 {
-  background-color: darkred;
+  // background-color: rgb(40, 80, 207);
   min-height: 100vh;
 }
 .card3 {
   height: 80%;
   width: 80%;
+  box-shadow: 0 10px 10px -5px;
 }
 .image-container {
   height: 90%;
@@ -113,6 +116,7 @@
 }
 .image {
   background-image: url("../../../assets/images/mozhgan1.jpeg");
+  background-position: right;
   background-size: cover;
   background-repeat: no-repeat;
   height: 70rem;

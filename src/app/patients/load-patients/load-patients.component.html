@@ -27,6 +27,15 @@
 </div>
 
 {{ patients | json }} -->
+
+<ag-grid-angular
+  class="ag-theme-alpine-dark myGrid"
+  [rowData]="patients$ | async"
+  [columnDefs]="columnDefs"
+  (gridReady)="onGridReady($event)"
+  rowSelection="multiple"
+>
+</ag-grid-angular>
 <div class="actions" fxLayout="row">
   <button mat-raised-button color="primary" (click)="selectAll()">
     select All
@@ -40,13 +49,3 @@
     Delete
   </button>
 </div>
-<ag-grid-angular
-  class="ag-theme-alpine-dark myGrid"
-  [rowData]="patients$ | async"
-  [columnDefs]="columnDefs"
-  (gridReady)="onGridReady($event)"
-  rowSelection="multiple"
->
-</ag-grid-angular>
-
-<button mat-button (click)="selectAll()">select All</button>

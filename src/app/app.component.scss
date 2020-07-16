@@ -4,7 +4,6 @@ mat-sidenav-content {
   height: 100%;
 }
 .toolbar {
-  background-color: white;
   color: black;
 }
 
@@ -37,4 +36,9 @@ a:hover {
 
 li {
   list-style: none;
+}
+
+.res {
+  position: absolute;
+  background-color: transparent;
 }

@@ -6,7 +6,7 @@
         routerLink="about/contactus"
         (click)="sidenav.close()"
         class="matlist"
-        >Contact Us</mat-list-item
+        >Contact Me</mat-list-item
       >
 
       <mat-list-item
@@ -49,7 +49,7 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar class="toolbar">
+    <mat-toolbar class="toolbar" ngClass.gt-md="res">
       <button
         (click)="sidenav.toggle()"
         fxHide.gt-md
@@ -127,7 +127,7 @@
             role="listitem"
             routerLink="about/contactus"
             routerLinkActive="active"
-            >Contact Us</a
+            >Contact Me</a
           >
         </li>
 
