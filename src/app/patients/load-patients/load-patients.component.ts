@@ -16,6 +16,8 @@ import { MatSort } from '@angular/material/sort';
 export class LoadPatientsComponent implements OnInit {
   // @ViewChild(MatSort, { static: true }) sort: MatSort;
   gridApi;
+  gApi;
+  columnApi;
   // patients;
   // dataSource;
 
@@ -72,6 +74,7 @@ export class LoadPatientsComponent implements OnInit {
 
   onGridReady({ api }: { api: GridApi }) {
     this.gridApi = api;
+
     api.sizeColumnsToFit();
   }
 

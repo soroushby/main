@@ -25,6 +25,7 @@
     "@angular/platform-browser-dynamic": "~10.0.0",
     "@angular/router": "~10.0.0",
     "@auth0/auth0-spa-js": "^1.10.0",
+    "@syncfusion/ej2-angular-grids": "^18.2.45",
     "ag-grid-angular": "^23.2.1",
     "ag-grid-community": "^23.2.1",
     "body-parser": "^1.19.0",
