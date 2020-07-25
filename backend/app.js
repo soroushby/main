@@ -43,7 +43,7 @@ app.post("/api/patients", (req, res, next) => {
 
 app.get("/api/patients", (req, res, next) => {
   Patient.find().then((data) => {
-    res.status(200).json({ message: "im the response", patients: data });
+    res.status(200).json({ message: "i,m the response", patients: data });
   });
 });
 

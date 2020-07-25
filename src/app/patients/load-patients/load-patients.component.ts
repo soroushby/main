@@ -5,8 +5,6 @@ import { map, find } from 'rxjs/operators';
 import { GridApi } from 'ag-grid-community';
 import { Patient } from '../models/patient';
 import { Router } from '@angular/router';
-import { MatTableDataSource } from '@angular/material/table';
-import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-load-patients',
